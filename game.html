@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcana - Tarô online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo-container">
+            <img id="bg" src="images/logoBg.png">
+            <img id="fg" src="images/logoFg.png">
+        </div>
+    </div>
+    <div id="instruction-message" class="instruction-message">
+        Escolha quantas cartas quiser e clique no botão "Ver cartas" para ver os suas palavras-chave e fazer sua
+        interpretação.
+    </div>
+    <button id="draw-button">Ver cartas</button>
+    <div id="game-container">
+        <div id="game-grid"></div>
+        <div id="slider" class="hidden">
+            <div id="slider-container"></div>
+            <img id="prev-button" src="icons/angle-left.svg">
+            <img id="next-button" src="icons/angle-right.svg">
+        </div>
+    </div>
+    <button id="restart-button" class="hidden">Recomeçar</button>
+
+    <div id="dialog-container" class="hidden">
+        <div id="instruction-dialog">
+            <span class="instruction-message">
+                Prepare-se para sua leitura!<br><br>
+    
+                Antes de tirar suas cartas, encontre um momento de silêncio interior. Respire fundo, desacelere a mente e
+                concentre-se na sua pergunta. Mentalize com clareza aquilo que deseja saber. Quanto mais verdadeira for a
+                sua intenção, mais reveladora será a mensagem.<br><br>
+    
+                Acredite no poder das cartas. Quando a pergunta é sobre você, as respostas costumam vir de dentro — das suas
+                emoções, vivências e intuição. Mas mesmo quando as perguntas envolvem outras pessoas ou situações externas,
+                as cartas se conectam à energia do momento e podem revelar o que está oculto, abrindo caminhos de
+                entendimento.<br><br>
+    
+                Abra sua mente, sinta com o coração e permita que a espiritualidade te guie.
+                A mensagem certa sempre chega para quem busca com verdade.
+                <button id="ok-button">Ok</button>
+            </span>
+        </div>
+        
+    </div>
+
+    <script src="scripts/tarotCards.js"></script>
+    <script src="scripts/game.js"></script>
+</body>
+
+</html>

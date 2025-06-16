@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcana</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-container">
+            <div id="header-buttons">
+                <button id="menu-button"><img class="icon" src="icons/menu.svg"></button>
+                <div id="search-container">
+                    <input id="search-bar" type="text" placeholder="Pesquise cartas" autocomplete="off"></input>
+                    <img id="search-icon" src="icons/lupinha.svg">
+                </div>
+                <button id="toggle-button"><img class="icon" src="icons/cards.svg"></button>
+            </div>
+            <div id="search-results" class="hidden"></div>
+            <div id="menu" class="hidden">
+                <a href="game.html">Tirar cartas</a>
+                <a href="about.html">Sobre</a>
+            </div>
+        </div>
+
+        <div id="logo-container">
+            <img id="bg" src="images/logoBg.png">
+            <img id="fg" src="images/logoFg.png">
+        </div>
+    </div>
+
+    <script src="scripts/tarotCards.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
