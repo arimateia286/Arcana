@@ -44,6 +44,7 @@ gameCards.forEach((card) => {
         if (!card.isSelected) {
             actualGame.push({ name: card.name, reversed: card.reversed });
             card.isSelected = true;
+            if (drawButton.classList.contains("hidden")) drawButton.classList.remove("hidden");
         }
         wrapper.classList.add('flipped');
         if (card.reversed) {
@@ -87,6 +88,20 @@ restartButton.addEventListener("click", () => {
     location.reload();
 });
 
+const copyPromptButton = document.getElementById("copy-prompt-button");
+copyPromptButton.addEventListener("click", () => {
+    let message = `
+Interprete para mim essa tiragem de tarô que acabei de fazer no aplicativo Arcana:
+- Contexto: [Especifique aqui o contexto da sua tiragem, sobre o que perguntava, sobre a situação, etc...]
+- Cartas tiradas: `;
+    actualGame.forEach(carta => {
+        message += `${carta.name}(${carta.reversed ? 'Invertida' : 'Em pé'}), `;
+    });
+    message = message.slice(0, message.length - 2);
+    message += ".";
+    copyTextToClipboard(message);
+});
+
 const drawButton = document.getElementById("draw-button");
 drawButton.addEventListener("click", () => {
     if (actualGame.length > 0) {
@@ -95,6 +110,7 @@ drawButton.addEventListener("click", () => {
         slider.classList.remove("hidden");
         drawButton.classList.add("hidden");
         restartButton.classList.remove("hidden");
+        copyPromptButton.classList.remove("hidden");
         showCard(currentSlide);
         gameContainer.scrollTo(0, 0);
     }
@@ -106,4 +122,14 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
+}
+
+async function copyTextToClipboard(textToCopy) {
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            alert("Prompt copiado com sucesso!");
+        })
+        .catch(err => {
+            console.error('Erro ao copiar: ', err);
+        });
 }
